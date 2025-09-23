@@ -182,15 +182,27 @@ class Section1Manager {
     if (os === 'iOS') {
       this.textContainer.innerHTML += `<a class='cta-app-store' href='${data?.appStoreCtaLink}'>
         <img src='./dynamic-lp/images/app_store_badge.svg' />
-      </a>`;
+      </a>
+      <a class='mobile-site' href="${data?.ctaLink}">
+        Continue to mobile site
+      </a>
+      `;
     } else if (os === 'Samsung') {
       this.textContainer.innerHTML += `<a class='cta-galaxy-store' href="${data?.galaxyStoreCtaLink}">
         <img src='./dynamic-lp/images/galaxy_store_badge.svg' />
-      </a>`;
+      </a>
+      <a class='mobile-site' href="${data?.ctaLink}">
+        Continue to mobile site
+      </a>
+      `;
     } else if (os === 'Android') {
       this.textContainer.innerHTML += `<a class='cta-play-store' href="${data?.googlePlayStoreCtaLink}">
         <img src='./dynamic-lp/images/google_play_badge.svg' />
-      </a>`;
+      </a>
+      <a class='mobile-site' href="${data?.ctaLink}">
+        Continue to mobile site
+      </a>
+      `;
     } else {
       this.textContainer.innerHTML += `<a class='card-cta-2' href='${data?.ctaLink}'>
         ${data.ctaText}
