@@ -208,6 +208,7 @@ class Section1Manager {
         ${data.ctaText}
       </a>`;
     }
+    
 
     this.stickyFooterContent.innerHTML = `${data.mobileConsentBannerTitle}`;
     this.mobileScrollModalTitleContent.innerHTML = `${data.mobilePopUpTitle}`;
