@@ -182,36 +182,36 @@ class Section1Manager {
 
     let cta = ''
 
-    const os = this.getOs();
-    if (os === 'iOS') {
-      cta = `<a class='cta-app-store' href='${data?.appStoreCtaLink}'>
-        <img src='./dynamic-lp/images/app_store_badge.svg' />
-      </a>
-      <a class='mobile-site' href="${data?.ctaLink}">
-        Continue to mobile site
-      </a>
-      `;
-    } else if (os === 'Samsung') {
-      cta = `<a class='cta-galaxy-store' href="${data?.galaxyStoreCtaLink}">
-        <img src='./dynamic-lp/images/galaxy_store_badge.svg' />
-      </a>
-      <a class='mobile-site' href="${data?.ctaLink}">
-        Continue to mobile site
-      </a>
-      `;
-    } else if (os === 'Android') {
-      cta = `<a class='cta-play-store' href="${data?.googlePlayStoreCtaLink}">
-        <img src='./dynamic-lp/images/google_play_badge.svg' />
-      </a>
-      <a class='mobile-site' href="${data?.ctaLink}">
-        Continue to mobile site
-      </a>
-      `;
-    } else {
+    // const os = this.getOs();
+    // if (os === 'iOS') {
+    //   cta = `<a class='cta-app-store' href='${data?.appStoreCtaLink}'>
+    //     <img src='./dynamic-lp/images/app_store_badge.svg' />
+    //   </a>
+    //   <a class='mobile-site' href="${data?.ctaLink}">
+    //     Continue to mobile site
+    //   </a>
+    //   `;
+    // } else if (os === 'Samsung') {
+    //   cta = `<a class='cta-galaxy-store' href="${data?.galaxyStoreCtaLink}">
+    //     <img src='./dynamic-lp/images/galaxy_store_badge.svg' />
+    //   </a>
+    //   <a class='mobile-site' href="${data?.ctaLink}">
+    //     Continue to mobile site
+    //   </a>
+    //   `;
+    // } else if (os === 'Android') {
+    //   cta = `<a class='cta-play-store' href="${data?.googlePlayStoreCtaLink}">
+    //     <img src='./dynamic-lp/images/google_play_badge.svg' />
+    //   </a>
+    //   <a class='mobile-site' href="${data?.ctaLink}">
+    //     Continue to mobile site
+    //   </a>
+    //   `;
+    // } else {
       cta = `<a class='card-cta-2' href='${data?.ctaLink}'>
         ${data.ctaText}
       </a>`;
-    }
+    // }
     
     this.textContainer.innerHTML += cta;
 
