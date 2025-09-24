@@ -106,6 +106,8 @@ class Section1Manager {
   constructor() {
     this.section = document.querySelector(".section1");
     this.textContainer = this.section.querySelector(".text-container");
+    this.headerContainer = this.textContainer.querySelector(".header-container");
+    this.cta = this.textContainer.querySelector('.card-cta-2');
     this.videoContainer = this.section.querySelector(".video-container");
     this.stickyFooterContent = document.querySelector('.mobile-sticky-footer .footer-text p');
     this.stickyFooterButton = document.querySelector('.mobile-sticky-footer .footer-cta');
@@ -171,16 +173,14 @@ class Section1Manager {
 
   render(data) {
     // Text container update
-    this.textContainer.innerHTML = `
-      <div class='header-container'>
-        <h1 class='gc-text'>${data.claimTitle}</h1>
-        <h1 class='gc-prize'>${data.gcPrize?.replace('.', ',')}</h1>
-        <h1 class='sc-prize'>${data.scPrize}</h1>
-        <h1 class='sc-text'>${data.scText}</h1>
-      </div>
+    this.headerContainer.innerHTML = `
+      <h1 class='gc-text'>${data.claimTitle}</h1>
+      <h1 class='gc-prize'>${data.gcPrize?.replace('.', ',')}</h1>
+      <h1 class='sc-prize'>${data.scPrize}</h1>
+      <h1 class='sc-text'>${data.scText}</h1>
     `;
 
-    let cta = ''
+    this.cta.innerText = data?.ctaText;
 
     // const os = this.getOs();
     // if (os === 'iOS') {
@@ -208,17 +208,12 @@ class Section1Manager {
     //   </a>
     //   `;
     // } else {
-      cta = `<a class='card-cta-2' href='${data?.ctaLink}'>
-        ${data.ctaText}
-      </a>`;
+
     // }
     
-    this.textContainer.innerHTML += cta;
-
+  
     this.stickyFooterContent.innerHTML = `${data.mobileConsentBannerTitle}`;
-    this.stickyFooterButton.innerHTML = cta;
     this.mobileScrollModalTitleContent.innerHTML = `${data.mobilePopUpTitle}`;
-    this.mobileScrollModalButtons.innerHTML = cta;
     this.mobileScrollModalSubTitleContent.innerHTML = "";
     
     // Start observing for video loading

@@ -1,5 +1,5 @@
 export const config = {
-	status: "test",
+	status: "prod",
 	test: {
 		navbarSheetId: '68baca6d8987130364e70e22',
 		section1SheetId: '68b96a858987130364e70e17',
